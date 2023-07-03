@@ -3,6 +3,12 @@ import ReactDOM from "react-dom/client";
 import "./app/layout/styles.css";
 import App from "./app/layout/App";
 import reportWebVitals from "./reportWebVitals";
+// Import Material UI Roboto font in entry point(index.tsx).
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

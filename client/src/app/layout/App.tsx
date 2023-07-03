@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Product } from "../models/product";
 import Catalog from "../../features/catalog/Catalog";
+import { Typography } from "@mui/material";
 
 function App() {
   // use Product interface
@@ -27,15 +28,14 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <h1>hi</h1>
+    <>
+      <Typography variant="h1">Welcome to EShop!</Typography>
       {/* 
       Catalog component receives the required properties through the Props interface,
       ensuring that all necessary parameters are passed.
       */}
       <Catalog products={products} addProduct={addProduct} />
-      
-    </div>
+    </>
   );
 }
 
