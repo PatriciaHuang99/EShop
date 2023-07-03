@@ -12,6 +12,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<StoreContext>(opt => {
     opt.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+// Enable CORS (Cross-Origin Resource Sharing)
+builder.Services.AddCors();
 
 var app = builder.Build();
 
@@ -22,7 +24,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+app.UseCors(opt =>
+{
+    // Allow any header to be sent in the request
+    opt.AllowAnyHeader()
+    
+    // Allow any HTTP method (GET, POST, PUT, DELETE, etc.)
+    .AllowAnyMethod()
+    
+    // Specify the allowed origins (in this case, http://localhost:3000 and http://localhost:3001)
+    .WithOrigins("http://localhost:3000", "http://localhost:3001");
+});
 
 app.UseAuthorization();
 
