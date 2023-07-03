@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Product } from "../models/product";
+import Catalog from "../../features/catalog/Catalog";
 
 function App() {
   // use Product interface
@@ -28,14 +29,12 @@ function App() {
   return (
     <div className="app">
       <h1>hi</h1>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - {product.price}
-          </li>
-        ))}
-      </ul>
-      <button onClick={addProduct}></button>
+      {/* 
+      Catalog component receives the required properties through the Props interface,
+      ensuring that all necessary parameters are passed.
+      */}
+      <Catalog products={products} addProduct={addProduct} />
+      
     </div>
   );
 }
