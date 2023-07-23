@@ -39,7 +39,7 @@ export default function ProductCard({ product }: Props) {
       />
       <CardContent>
         <Typography gutterBottom color="secondary" component="div">
-          // Display the product price in dollars with two decimal places. $
+          {/*  Display the product price in dollars with two decimal places.*/}$
           {(product.price / 100).toFixed(2)}
         </Typography>
         <Typography variant="body2" color="text.secondary">
