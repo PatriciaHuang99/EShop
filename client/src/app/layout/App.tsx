@@ -9,6 +9,7 @@ import {
 import Header from "./Header";
 import { dark } from "@mui/material/styles/createPalette";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,11 +30,7 @@ function App() {
       <CssBaseline />
       <Header darkMode={darkMode} handleThemeChange={handleThemeChange} />
       <Container>
-        {/* 
-      Catalog component receives the required properties through the Props interface,
-      ensuring that all necessary parameters are passed.
-      */}
-        <Catalog />
+        <Outlet />
       </Container>
     </ThemeProvider>
   );
