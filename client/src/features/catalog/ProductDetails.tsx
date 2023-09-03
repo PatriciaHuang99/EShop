@@ -7,11 +7,10 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Product } from "../../app/models/product";
-import { error } from "console";
+import agent from "../../app/api/agent";
 
 export default function ProductDetails() {
   // Destructure the 'id' of type 'string' from the object returned by 'useParams()'.
@@ -21,11 +20,12 @@ export default function ProductDetails() {
 
   // set dependency to call the method whenever id changes
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/api/Products/${id}`)
-      .then((response) => setProduct(response.data))
-      .catch((error) => console.log(error))
-      .finally(() => setLoading(false));
+    // check if id is null
+    id &&
+      agent.Catalog.details(parseInt(id))
+        .then((response) => setProduct(response))
+        .catch((error) => console.log(error.response))
+        .finally(() => setLoading(false));
   }, [id]);
 
   if (loading) return <h3>Loading...</h3>;
