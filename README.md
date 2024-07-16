@@ -5,7 +5,7 @@ Follow these steps to get the CS-Matcher running:
 1. Clone the repository:
 
    ```shell
-   **a**
+   <b>a<b>
    git clone https://github.com/PatriciaHuang99/CS-Matcher.gi  git clone https://github.com/PatriciaHuang99/CS-Matcher.git
 
    ```
