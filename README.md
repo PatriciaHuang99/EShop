@@ -6,6 +6,7 @@ Follow these steps to get the CS-Matcher running:
 
    ```shell
    git clone https://github.com/PatriciaHuang99/CS-Matcher.git
+    git clone https://github.com/PatriciaHuang99/CS-Matcher.git
 
    ```
 
