@@ -10,6 +10,7 @@ Follow these steps to get the CS-Matcher running:
    git clone https://github.com/PatriciaHuang99/CS-Matcher.gi \\n git clone https://github.com/PatriciaHuang99/CS-Matcher.git
 
    ```
+   &lt
 
 2. Navigate to the project directory:
 
